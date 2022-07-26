@@ -10,15 +10,15 @@ import numpy as np
 b=0
 alpha=1
 
-def perceptron_train(x,t,w):
+def perceptron_train(x,target,w):
   for i in range(0,len(x)):
     global b
     yin=sum(x[i]*w)+b
-    y=f(yin)
-    dw=alpha*(t[i]-y)*x[i]
-    w=np.add(w,dw)
-    db=alpha*(t[i]-y)
-    b=b+db
+    prediction = f(yin)
+    dw = alpha*(target[i]-prediction)*x[i]
+    w = np.add(w,dw)
+    db = alpha*(target[i]-y)
+    b = b+db
     print("After Iteration ",i+1," :Weights")
     print(w)
     print("Bias:",b)    
@@ -38,7 +38,7 @@ def f(x):
   
 trainx=np.array([[0,0],[0,1],[1,0],[1,1]])
 trainy=np.array([0,1,1,1])
-testx=np.array([0,0])
+testx=np.array([1,0])
 wt=np.array([0,0])
 print("Training Data(x):")
 print(trainx)

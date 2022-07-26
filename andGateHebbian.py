@@ -53,6 +53,7 @@ print("Initial Weights:")
 print(wt)
 print("Training:")
 print("+++++++++")
+# You might need to iterate for multiple epoch for some cases. So using While loop would be better
 # for i in range(1,5):
 #   print("Empoch#",1)
 wt=hebb_train(trainx,trainy,wt)
